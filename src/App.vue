@@ -1,16 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <InputSearch />
+  <ItemsList />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import { useSearchStore } from './stores/useSearchStore'
+import InputSearch from './components/InputSearch.vue'
+import ItemsList from './components/ItemsList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    InputSearch,
+    ItemsList,
+  },
+  setup() {
+    const store = useSearchStore()
+
+    return { store }
+  },
 }
 </script>
 
@@ -20,7 +29,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #000000;
+  margin-top: 40px;
 }
 </style>
