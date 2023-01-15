@@ -30,9 +30,6 @@ import { useSearchStore } from '../stores/useSearchStore'
 
 export default {
     name: 'ItemsList',
-    components() {
-
-    },
     setup() {
         const store = useSearchStore()
 
@@ -41,7 +38,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .ul {
     padding: 0;

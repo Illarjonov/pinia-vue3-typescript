@@ -3,11 +3,11 @@ import { defineStore } from 'pinia'
 
 export default interface Item {
     display_name: string;
-    icon: string;
+    icon?: string;
     type: string;
 }
 
-export interface State {
+export type StateI = {
     searchItems: Item[]
     loader: boolean
     nullResults: boolean
@@ -15,11 +15,11 @@ export interface State {
 
 export const useSearchStore = defineStore({
     id: 'search',
-    state: (): State => ({
+    state: () => ({
         searchItems: [],
         loader: false,
         nullResults: false
-    }),
+    } as StateI),
     getters: {
         getItems: state => { return state.searchItems },
 
